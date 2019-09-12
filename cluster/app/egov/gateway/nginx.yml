@@ -126,19 +126,19 @@ spec:
 {% endif %}
         - name: ASSET_BUCKET_URL
           value: "{{conf['nginx']['asset-bucket-url']}}"
-        volumeMounts:
-        - mountPath: /etc/ssl/acme/private/{{conf['egov-config']['domain']}}/privkey.pem
-          name: certs
-          subPath: privkey.pem
-        - mountPath: /etc/ssl/acme/{{conf['egov-config']['domain']}}/cert.pem
-          name: certs
-          subPath: cert.pem
-        - mountPath: /etc/ssl/acme/{{conf['egov-config']['domain']}}/chain.pem
-          name: certs
-          subPath: chain.pem
-        - mountPath: /etc/ssl/acme/{{conf['egov-config']['domain']}}/fullchain.pem
-          name: certs
-          subPath: fullchain.pem
+        #volumeMounts:
+        #- mountPath: /etc/ssl/acme/private/{{conf['egov-config']['domain']}}/privkey.pem
+         # name: certs
+          #subPath: privkey.pem
+        #- mountPath: /etc/ssl/acme/{{conf['egov-config']['domain']}}/cert.pem
+         # name: certs
+          #subPath: cert.pem
+        #- mountPath: /etc/ssl/acme/{{conf['egov-config']['domain']}}/chain.pem
+         # name: certs
+         # subPath: chain.pem
+        #- mountPath: /etc/ssl/acme/{{conf['egov-config']['domain']}}/fullchain.pem
+        #  name: certs
+         # subPath: fullchain.pem
 {% if conf['nginx']['nginx-global-configs-injection-enabled'] %}                
         - mountPath: /var/web/configs/
           name: js-injection    
